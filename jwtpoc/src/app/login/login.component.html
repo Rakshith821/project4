@@ -1,0 +1,22 @@
+<div class="login-form">
+  <div class="title">
+    <h6>Login to your Account</h6>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+    <mat-form-field class="w-full" appearance="outline">
+      <mat-label>Your Email</mat-label>
+      <input matInput type="email" formControlName="username" [(ngModel)]="email" />
+      <mat-error *ngIf="loginForm.controls['username'].errors?.required">
+        Email is Required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-full" appearance="outline">
+      <mat-label>Your Password</mat-label>
+      <input matInput type="password" formControlName="password" [(ngModel)]="password" />
+      <mat-error *ngIf="loginForm.controls['password'].errors?.required">
+        Password is Required
+      </mat-error>
+    </mat-form-field>
+    <button class="btn btn-login">Login</button>
+  </form>
+</div>
